@@ -1,0 +1,34 @@
+1. When compared to ArrayLists, LinkedLists should be used when there is a large number of additions or
+deletions. Explain why this is the case.
+
+This is the case because when you are deleting or inserting not at the end of the ArrayList, it requires to perform shifts of the items
+to fix their positioning. A LinkedList does not need to perform any shifting when inserting or deleting.
+Additionally, lots of deletions and insertions will cause the ArrayList to perform resizing while the LinkedList does not have any resizing
+mechanisms.
+
+2. What is the internal data structure of an ArrayList?
+
+A fixed size Array.
+
+3. What is the internal data structure of a LinkedList?
+
+A Doubly LinkedList.
+
+4. To what java package do all Java Collection Framework classes belong?
+
+java.util
+
+5. What Car method gets executed when the List method contains is used?
+
+The Car method used is the equals() method.
+
+6. What Boat method gets executed when the List method remove is used?
+
+Since the List method removed by index is called, no Boat method gets called.
+
+7. What class originally defines the equals() method? Describe exactly what the originally defined equals()
+class does and why we need to override it in classes we construct.
+
+The Object class originally defines the equals() method, and originally the equals() method compares if the addresses
+of the objects it is comparing. We need to override it because we want to compare equality using the objects attributes
+and not their addresses.

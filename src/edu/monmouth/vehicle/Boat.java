@@ -48,4 +48,16 @@ public class Boat implements Vehicle {
     public String toString() {
         return "Boat - Length: " + boatLength + ", Power Source: " + powerSource;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        // check other is a Boat type
+        if (!(other instanceof Boat)) {
+           return false;
+        }
+        // cast other into Boat object
+        Boat otherBoat = (Boat) other;
+        return this.powerSource == otherBoat.powerSource && this.boatLength == otherBoat.boatLength;
+    }
+
 }

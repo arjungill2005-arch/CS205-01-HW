@@ -1,0 +1,55 @@
+Invalid vehicle line parsed
+Invalid vehicle line parsed
+Invalid vehicle type token
+Invalid Engine Size. Must be integer
+java.lang.NumberFormatException: For input string: " 25"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:648)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at edu.monmouth.hw2.HW2.loadVehicles(HW2.java:98)
+	at edu.monmouth.hw2.HW2.main(HW2.java:149)
+Invalid vehicle line parsed
+Invalid Car Creation
+edu.monmouth.vehicle.CarException: Invalid engine size
+	at edu.monmouth.vehicle.Car.setEngineSize(Car.java:19)
+	at edu.monmouth.vehicle.Car.<init>(Car.java:9)
+	at edu.monmouth.hw2.HW2.loadVehicles(HW2.java:96)
+	at edu.monmouth.hw2.HW2.main(HW2.java:149)
+Invalid Engine Size. Must be integer
+java.lang.NumberFormatException: For input string: "20o"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at edu.monmouth.hw2.HW2.loadVehicles(HW2.java:95)
+	at edu.monmouth.hw2.HW2.main(HW2.java:149)
+Invalid vehicle line parsed
+Invalid Boat Creation
+edu.monmouth.vehicle.BoatException: Invalid boat size
+	at edu.monmouth.vehicle.Boat.setBoatLength(Boat.java:19)
+	at edu.monmouth.vehicle.Boat.<init>(Boat.java:9)
+	at edu.monmouth.hw2.HW2.loadVehicles(HW2.java:99)
+	at edu.monmouth.hw2.HW2.main(HW2.java:149)
+Is strings empty?
+false
+Is vehicles empty?
+false
+After removing strings at index 3:
+	Monmouth University
+	Boardwalk
+	West Long Branch
+	1933
+	Seven Presidents
+	New Jersey
+After removing vehicles at index 5
+	Car - Engine Size: 4, Power Source: GASOLINE
+	Boat - Length: 100, Power Source: GASOLINE
+	Car - Engine Size: 6, Power Source: FUELOIL
+	Car - Engine Size: 6, Power Source: DEISEL
+	Boat - Length: 300, Power Source: ELECTRICITY
+	Car - Engine Size: 9, Power Source: FUELOIL
+	Boat - Length: 42, Power Source: ELECTRICITY
+	Car - Engine Size: 4, Power Source: GASOLINE
+Should contain Car - Engine Size: 6, Power Source: FUELOIL
+true
+Should not contain Boat - Length: 80, Power Source: ELECTRICITY
+false

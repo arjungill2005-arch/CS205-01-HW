@@ -48,4 +48,15 @@ public class Car implements Vehicle {
     public String toString() {
         return "Car - Engine Size: " + engineSize + ", Power Source: " + powerSource;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Car) ) {
+            return false;
+        }
+        // cast
+        Car otherCar = (Car) other;
+        return this.powerSource == otherCar.powerSource && this.engineSize == otherCar.engineSize;
+    }
+
 }

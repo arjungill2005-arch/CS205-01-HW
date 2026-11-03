@@ -7,12 +7,12 @@ Invalid boat size
 edu.monmouth.vehicle.BoatException: Invalid boat size
 	at edu.monmouth.vehicle.Boat.setBoatLength(Boat.java:19)
 	at edu.monmouth.vehicle.Boat.<init>(Boat.java:9)
-	at edu.monmouth.hw1.HW1.main(HW1.java:62)
+	at edu.monmouth.hw2.HW2.main(HW1.java:62)
 Invalid engine size
 edu.monmouth.vehicle.CarException: Invalid engine size
 	at edu.monmouth.vehicle.Car.setEngineSize(Car.java:19)
 	at edu.monmouth.vehicle.Car.<init>(Car.java:9)
-	at edu.monmouth.hw1.HW1.main(HW1.java:68)
+	at edu.monmouth.hw2.HW2.main(HW1.java:68)
 Vehicle List after adding planes
 (Plane - Power Source: DEISEL) --> (Plane - Power Source: GASOLINE) --> (Car - Engine Size: 4, Power Source: DEISEL) --> (Car - Engine Size: 12, Power Source: ELECTRICITY) --> (Boat - Length: 500, Power Source: DEISEL) --> (Boat - Length: 12, Power Source: GASOLINE) --> 
 After inserting Vehicles: 
