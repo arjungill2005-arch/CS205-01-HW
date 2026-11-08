@@ -35,4 +35,18 @@ public class Plane implements Vehicle {
     public String toString() {
         return "Plane - Power Source: " + powerSource;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
+        if (!(other instanceof Plane )) {
+            return false;
+        }
+
+        Plane otherPlane = (Plane) other;
+        return this.powerSource == otherPlane.powerSource;
+    }
 }

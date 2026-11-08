@@ -51,6 +51,10 @@ public class Car implements Vehicle {
 
     @Override
     public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
         if (!(other instanceof Car) ) {
             return false;
         }

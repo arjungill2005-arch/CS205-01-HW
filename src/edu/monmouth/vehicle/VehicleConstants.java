@@ -7,4 +7,6 @@ public class VehicleConstants {
 
     public static final int MAXENGINESIZE = 199;
     public static final int MINENGINESIZE = 1;
+
+    private VehicleConstants() {}
 }

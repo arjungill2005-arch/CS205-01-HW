@@ -51,6 +51,10 @@ public class Boat implements Vehicle {
 
     @Override
     public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
         // check other is a Boat type
         if (!(other instanceof Boat)) {
            return false;
