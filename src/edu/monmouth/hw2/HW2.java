@@ -6,6 +6,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.ListIterator;
 
 import edu.monmouth.vehicle.*;
 
@@ -68,37 +69,58 @@ public class HW2 {
 					String line = sc.nextLine();
 					String[] tokens = line.split(",");
 
-					// validating the right amount of tokens given
-					if(tokens.length != 3) {
-						System.err.println("Invalid vehicle line parsed");
+					if (tokens.length < 2)  {
+						System.err.println("Invalid line - missing vehicle type");
 						continue;
 					}
 
+					// if 1st if statement is false, check the
 					String vehicleType = tokens[0];
 					String powerSource = tokens[1];
-					String number = tokens[2];
-
-					// validating the vehicle type token
-					if(!vehicleType.equals("c") && !vehicleType.equals("b")) {
-						System.err.println("Invalid vehicle type token");
-						continue;
-					}
-
 					// validating powerSource token
 					PowerTypes pt = PowerTypes.valueOf(powerSource); // throws IllegalArgumentException when invalid
+
 
 					// create a specific vehicle
 					Vehicle v;
 
 					if (vehicleType.equals("c")) {
+						// handle car case
+						// validating the right amount of tokens given
+						if(tokens.length != 3) {
+							System.err.println("Invalid car line parsed");
+							continue;
+						}
 						// validating the engineSize
-						int engineSize  = Integer.parseInt(number);
+						int engineSize  = Integer.parseInt(tokens[2]);
 						v = new Car(pt, engineSize);
-					} else { // "b" case
-						int boatLength = Integer.parseInt(number);
-						v = new Boat(pt, boatLength);
 					}
 
+					else if (vehicleType.equals("b")) {
+						// handle boat case
+						// validating the right amount of tokens given
+						if(tokens.length != 3) {
+							System.err.println("Invalid boat line parsed");
+							continue;
+						}
+						int boatLength = Integer.parseInt(tokens[2]);
+						v = new Boat(pt, boatLength);
+
+//					} else if (vehicleType.equals("p")) {
+//						// handle boat case
+//						// validating the right amount of tokens given
+//						if(tokens.length != 2) {
+//							System.err.println("Invalid plane line parsed");
+//							continue;
+//						}
+//						// Create new plane
+//						v = new Plane(pt);
+					} else {
+						// handle bad case
+						System.err.println("Invalid vehicle type token");
+						continue;
+
+					}
 					vehicles.add(v);
 
 				}  catch (NumberFormatException nfe) {
@@ -174,5 +196,53 @@ public class HW2 {
 			// skip exception handling
         }
 
-    }
+		System.out.println("Number of strings: " + strings.size());
+		System.out.println("Number of Vehicles: " + vehicles.size());
+
+		System.out.println("Forward Navigation - Strings List");
+		ListIterator<String> si = strings.listIterator();
+		while (si.hasNext()) {
+			System.out.println(si.next());
+		}
+
+		System.out.println("Forward Navigation - Vehicle List");
+
+		ListIterator<Vehicle> vi = vehicles.listIterator();
+
+		while (vi.hasNext()) {
+			System.out.println(vi.next());
+		}
+
+		System.out.println("Reverse Navigation - Strings List");
+		ListIterator<String> sr = strings.listIterator(strings.size());
+		while (sr.hasPrevious()) {
+			System.out.println(sr.previous());
+		}
+
+		System.out.println("Reverse Navigation - Vehicle List");
+		ListIterator<Vehicle> vr = vehicles.listIterator(vehicles.size());
+		while (vr.hasPrevious()) {
+			System.out.println(vr.previous());
+		}
+
+		try {
+			Car carRemove = new Car(PowerTypes.FUELOIL, 6);
+			System.out.println("Removing: " + carRemove);
+
+			boolean removed = vehicles.remove(carRemove);
+			System.out.println("Vehicle removed: " + removed);
+
+			System.out.println("Vehicle list after removing");
+			for (Vehicle v : vehicles) {
+				System.out.println(v);
+			}
+
+		} catch (CarException e) {
+			e.printStackTrace();
+		}
+
+
+
+
+	}
 }
